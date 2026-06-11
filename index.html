@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Soham Banarase | AI Engineer</title>
+  <meta name="description" content="Portfolio of Soham Banarase — AI Engineer building intelligent data products, LLM systems, and audit analytics tools." />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ["Inter", "sans-serif"]
+          },
+          colors: {
+            ink: "#05070d",
+            soft: "#aeb8d4",
+            text: "#eef3ff",
+            blue: "#7db7ff",
+            cyan: "#66f6ff",
+            violet: "#b892ff",
+            green: "#8dffcb"
+          }
+        }
+      }
+    }
+  </script>
+
+  <noscript>
+    <style>
+      #preloader { display: none !important; }
+      body { overflow: auto !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</head>
+
+<body class="is-loading font-inter bg-ink text-text overflow-x-hidden selection:bg-cyan selection:text-ink">
+
+  <!-- Boot preloader -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-monogram">SB</div>
+      <div class="preloader-track">
+        <span id="preloader-bar"></span>
+      </div>
+      <div class="preloader-meta">
+        <span id="preloader-status">booting interface</span>
+        <span id="preloader-percent">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="scroll-progress"></div>
+  <div class="top-blur" aria-hidden="true"></div>
+
+  <div class="fixed inset-0 -z-50 overflow-hidden">
+    <canvas id="constellation-canvas"></canvas>
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
+    <div class="aurora aurora-three"></div>
+    <div class="noise-layer"></div>
+  </div>
+
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 border-b border-white/10 bg-ink/60 backdrop-blur-2xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+      <a href="#home" class="group flex items-center gap-3">
+        <span class="grid h-10 w-10 place-items-center rounded-2xl border border-white/15 bg-white/5 text-sm font-black text-cyan shadow-[0_0_30px_rgba(102,246,255,0.15)]">
+          SB
+        </span>
+        <span class="leading-tight">
+          <span class="block text-sm font-bold tracking-wide text-white">Soham Banarase</span>
+          <span class="block text-xs text-soft">AI · Data · Audit Tech</span>
+        </span>
+      </a>
+
+      <div class="hidden items-center gap-7 md:flex">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 md:hidden" aria-label="Open menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden border-t border-white/10 bg-ink/95 px-5 py-4 md:hidden">
+      <a class="mobile-link" href="#about">About</a>
+      <a class="mobile-link" href="#experience">Experience</a>
+      <a class="mobile-link" href="#projects">Projects</a>
+      <a class="mobile-link" href="#skills">Skills</a>
+      <a class="mobile-link" href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section id="home" class="relative min-h-screen px-5 pt-28 md:px-8">
+      <div class="mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl items-center gap-14 py-12 lg:grid-cols-[1.02fr_0.98fr]">
+
+        <div id="hero-copy" data-parallax="-0.05">
+          <div class="reveal relative z-10">
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-soft backdrop-blur-xl">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green opacity-70"></span>
+                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-green"></span>
+              </span>
+              Building intelligent systems for real-world decisions
+            </div>
+
+            <h1 class="max-w-5xl text-5xl font-black tracking-[-0.06em] text-white sm:text-6xl md:text-7xl lg:text-8xl">
+              I turn complex data into
+              <span class="gradient-text" id="decode-text">intelligent, useful systems.</span>
+            </h1>
+
+            <p class="mt-7 max-w-2xl text-lg leading-8 text-soft md:text-xl">
+              I’m Soham Banarase — an AI Engineer working in Internal Audit Data Analytics at DHL, with a background in
+              artificial intelligence, cloud-native software, and user-focused data products. I build tools that make
+              AI and data easier to understand, trust, and act on.
+            </p>
+
+            <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+              <a href="#projects" class="magnetic-btn primary-btn">
+                View Featured Work
+                <span class="material-symbols-outlined text-[19px]">arrow_downward</span>
+              </a>
+
+              <a href="mailto:sohambanarase1999@gmail.com" class="magnetic-btn secondary-btn">
+                Let’s Connect
+                <span class="material-symbols-outlined text-[19px]">north_east</span>
+              </a>
+            </div>
+
+            <div class="mt-10 grid max-w-2xl grid-cols-3 gap-3">
+              <div class="metric-card">
+                <span class="metric-value">LLMs</span>
+                <span class="metric-label">AI Engineering</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-value">ML</span>
+                <span class="metric-label">Modeling</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-value">Dash</span>
+                <span class="metric-label">Web Apps</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-parallax="0.08">
+          <div class="hero-stage reveal reveal-delay-2">
+
+            <div class="hero-aura"></div>
+            <div class="hero-orbit hero-orbit-one"></div>
+            <div class="hero-orbit hero-orbit-two"></div>
+            <div class="hero-orbit hero-orbit-three"></div>
+
+            <div class="avatar-zone tilt-card">
+              <div class="avatar-platform-glow"></div>
+
+              <img src="me.png" alt="Soham Banarase" class="hero-avatar" />
+
+              <span class="hero-chip chip-python">Python</span>
+              <span class="hero-chip chip-knime">KNIME</span>
+              <span class="hero-chip chip-llm">LLMs</span>
+              <span class="hero-chip chip-dash">Dash</span>
+              <span class="hero-chip chip-cloud">Cloud</span>
+            </div>
+
+            <div class="signal-card tilt-card">
+              <p class="signal-kicker">Portfolio Signal</p>
+
+              <div class="signal-header-row">
+                <h2>AI Engineer</h2>
+                <span class="signal-badge">Data × AI</span>
+              </div>
+
+              <p>
+                LLM systems, machine learning, automation, and audit technology — shaped into usable products.
+              </p>
+
+              <div class="signal-list">
+                <div>
+                  <span>AI System Design</span>
+                  <strong data-count="94">0%</strong>
+                </div>
+                <div class="signal-bar">
+                  <span data-w="94%"></span>
+                </div>
+
+                <div>
+                  <span>Automation Thinking</span>
+                  <strong data-count="89">0%</strong>
+                </div>
+                <div class="signal-bar">
+                  <span data-w="89%"></span>
+                </div>
+
+                <div>
+                  <span>Product Mindset</span>
+                  <strong data-count="92">0%</strong>
+                </div>
+                <div class="signal-bar">
+                  <span data-w="92%"></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="scroll-cue" id="scroll-cue" aria-hidden="true">
+        <span class="scroll-mouse"><span></span></span>
+        <span class="scroll-cue-label">Scroll to explore</span>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>AI Engineering ✦ LLM Systems ✦ Machine Learning ✦ Audit Analytics ✦ Dash Applications ✦ Computer Vision ✦ Cloud-Native AI ✦ Automation ✦&nbsp;</span>
+        <span>AI Engineering ✦ LLM Systems ✦ Machine Learning ✦ Audit Analytics ✦ Dash Applications ✦ Computer Vision ✦ Cloud-Native AI ✦ Automation ✦&nbsp;</span>
+      </div>
+    </div>
+
+    <section id="about" class="section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">About</p>
+        <h2>Not just models — decision systems.</h2>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div class="glass-card reveal">
+          <p class="text-lg leading-8 text-soft">
+            What I love about AI is that it is never really only about models. It is about asking sharper questions,
+            finding patterns that matter, and giving people confidence to make better decisions.
+          </p>
+          <p class="mt-5 text-lg leading-8 text-soft">
+            My work sits at the intersection of artificial intelligence, data analytics, cloud technologies, and internal audit.
+            I enjoy building practical systems: tools that are technically strong, visually clean, and easy for non-technical
+            users to actually use.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="feature-card reveal reveal-delay-1">
+            <span class="material-symbols-outlined">psychology</span>
+            <h3>AI-first thinking</h3>
+            <p>LLMs, classification, computer vision, and intelligent workflow design.</p>
+          </div>
+
+          <div class="feature-card reveal reveal-delay-2">
+            <span class="material-symbols-outlined">analytics</span>
+            <h3>Analytics that explain</h3>
+            <p>Reports, dashboards, and patterns that help people understand what is happening.</p>
+          </div>
+
+          <div class="feature-card reveal reveal-delay-3">
+            <span class="material-symbols-outlined">deployed_code</span>
+            <h3>Builder mindset</h3>
+            <p>Dash, React, backend services, automation pipelines, and product-style delivery.</p>
+          </div>
+
+          <div class="feature-card reveal reveal-delay-4">
+            <span class="material-symbols-outlined">groups</span>
+            <h3>User-centered delivery</h3>
+            <p>Interfaces and workflows designed for adoption, not just technical completeness.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Experience</p>
+        <h2>A career path across AI, cloud, web apps, and audit analytics.</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line"><span class="timeline-line-progress"></span></div>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card tilt-card">
+            <p class="date">August 2025 — Present</p>
+            <h3>AI Engineer · Data Analytics</h3>
+            <h4>DHL Corporate Audit</h4>
+            <ul>
+              <li>Building AI/ML-powered tools — LLM workflows and classification models — for audit use cases.</li>
+              <li>Developing interactive Dash applications for audit reporting and analytics.</li>
+              <li>Designing workflows that convert audit data into usable tools and insights.</li>
+              <li>Combining AI engineering, automation, and stakeholder-friendly UX.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card tilt-card">
+            <p class="date">April 2025</p>
+            <h3>AI Software Engineer</h3>
+            <h4>Red Bull</h4>
+            <ul>
+              <li>Worked on AI software engineering tasks in a fast-moving technical environment.</li>
+              <li>Applied engineering thinking to intelligent systems and software workflows.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card tilt-card">
+            <p class="date">September 2023 — April 2025</p>
+            <h3>Cloud Software Engineer — AI & Data Mesh</h3>
+            <h4>Siemens</h4>
+            <ul>
+              <li>Worked on LLM-powered API generation within a data mesh context.</li>
+              <li>Developed cloud-native AI solutions for process automation and data-driven workflows.</li>
+              <li>Contributed across backend services, frontend interfaces, and scalable integration design.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card tilt-card">
+            <p class="date">April 2022 — January 2023</p>
+            <h3>Web Application Development</h3>
+            <h4>Evonext Healthcare</h4>
+            <ul>
+              <li>Built responsive React-based web applications.</li>
+              <li>Developed backend APIs using Java and MySQL.</li>
+              <li>Improved frontend reliability, usability, and cross-browser behavior.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card tilt-card">
+            <p class="date">June 2021</p>
+            <h3>Engineering Intern</h3>
+            <h4>KPMG</h4>
+            <ul>
+              <li>Completed a data analytics simulation focused on customer targeting.</li>
+              <li>Assessed data quality and prepared analysis-ready datasets.</li>
+              <li>Created dashboard-style visual communication for findings.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card tilt-card">
+            <p class="date">July 2020 — August 2020</p>
+            <h3>Web/App Development Intern</h3>
+            <h4>TRIOCLUST</h4>
+            <ul>
+              <li>Built full-stack web applications using React, Node.js, and Express.js.</li>
+              <li>Worked with CMS, DNS, hosting, and SEO-related tasks.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Featured Projects</p>
+        <h2>Selected work with a focus on intelligence, interaction, and impact.</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card tilt-card reveal">
+          <div class="project-visual visual-one">
+            <span class="material-symbols-outlined">auto_awesome</span>
+          </div>
+          <div class="project-content">
+            <p class="project-type">AI Research</p>
+            <h3>Visio-Linguistic Analysis of Text-to-Image AI</h3>
+            <p>Evaluation of multi-modal AI models, focusing on alignment between text prompts and generated image outputs.</p>
+            <div class="tag-row">
+              <span>Python</span>
+              <span>PyTorch</span>
+              <span>Evaluation</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card tilt-card reveal reveal-delay-1">
+          <div class="project-visual visual-two">
+            <span class="material-symbols-outlined">precision_manufacturing</span>
+          </div>
+          <div class="project-content">
+            <p class="project-type">Robotics & Vision</p>
+            <h3>AI-Based Navigation of Surgical Robot</h3>
+            <p>Intelligent navigation approach using computer vision for robotic precision in simulated surgical environments.</p>
+            <div class="tag-row">
+              <span>OpenCV</span>
+              <span>ROS</span>
+              <span>Vision</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card tilt-card reveal reveal-delay-2">
+          <div class="project-visual visual-three">
+            <span class="material-symbols-outlined">monitoring</span>
+          </div>
+          <div class="project-content">
+            <p class="project-type">Full-Stack App</p>
+            <h3>Clinical Trials Web Application</h3>
+            <p>Award-winning web application concept for securely managing clinical trial data with analytics and tracking.</p>
+            <div class="tag-row">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Dashboards</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Digital Skills</p>
+        <h2>A practical mix of AI engineering, analytics, and product thinking.</h2>
+      </div>
+
+      <div class="skills-orbit reveal">
+        <div class="skill-cluster">
+          <h3>AI & ML</h3>
+          <div>
+            <span>LLMs</span>
+            <span>Computer Vision</span>
+            <span>PyTorch</span>
+            <span>Classification</span>
+          </div>
+        </div>
+
+        <div class="skill-cluster">
+          <h3>Data Analytics</h3>
+          <div>
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>KNIME</span>
+            <span>Dash</span>
+          </div>
+        </div>
+
+        <div class="skill-cluster">
+          <h3>Cloud & Engineering</h3>
+          <div>
+            <span>AWS</span>
+            <span>Docker</span>
+            <span>APIs</span>
+            <span>Data Mesh</span>
+          </div>
+        </div>
+
+        <div class="skill-cluster">
+          <h3>Frontend & UX</h3>
+          <div>
+            <span>React</span>
+            <span>JavaScript</span>
+            <span>Responsive UI</span>
+            <span>Product Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Credentials</p>
+        <h2>Certifications, honors, and learning signals.</h2>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-2">
+        <div class="glass-card reveal">
+          <h3 class="card-title">
+            <span class="material-symbols-outlined">workspace_premium</span>
+            Certifications
+          </h3>
+          <ul class="clean-list">
+            <li>Android & Firebase ML Kit in Java</li>
+            <li>TCS Certified in Communication Skills</li>
+            <li>Microsoft AI Classroom Series</li>
+          </ul>
+        </div>
+
+        <div class="glass-card reveal reveal-delay-1">
+          <h3 class="card-title">
+            <span class="material-symbols-outlined">emoji_events</span>
+            Honors & Awards
+          </h3>
+          <ul class="clean-list">
+            <li>Finalist recognition in academic and innovation-focused events</li>
+            <li>Hackathon and project-based achievement experience</li>
+            <li>Consistent focus on AI, analytics, and applied problem solving</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact" class="relative border-t border-white/10 px-5 py-16 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="footer-card reveal">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 class="mt-3 max-w-2xl text-4xl font-black tracking-[-0.04em] text-white md:text-6xl">
+            Let’s build something clear, useful, and intelligent.
+          </h2>
+          <p class="mt-5 max-w-2xl text-lg leading-8 text-soft">
+            If you want to talk about AI systems, data products, analytics dashboards, or interesting ideas,
+            feel free to reach out.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="mailto:sohambanarase1999@gmail.com" class="footer-link">
+            <span class="material-symbols-outlined">mail</span>
+            sohambanarase1999@gmail.com
+          </a>
+
+          <a href="https://www.linkedin.com/in/sohambanarase/" target="_blank" rel="noopener noreferrer" class="footer-link">
+            <span class="material-symbols-outlined">work</span>
+            LinkedIn
+          </a>
+
+          <a href="https://github.com/sohambanarase" target="_blank" rel="noopener noreferrer" class="footer-link">
+            <span class="material-symbols-outlined">code</span>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-col justify-between gap-4 text-sm text-soft md:flex-row">
+        <p>© 2026 Soham Banarase. Built with AI, motion, and digital precision.</p>
+        <a href="#home" class="hover:text-cyan">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
